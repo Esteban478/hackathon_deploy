@@ -55,7 +55,8 @@ export default function Chat() {
   return (
     <div className="container mx-auto max-w-2xl p-4">
       <Card className="p-4 mb-4">
-        <div className="space-y-4 mb-4 min-h-[200px] max-h-[600px] overflow-y-auto">
+        <h1 className="font-semibold">How can I assist you?</h1>
+        <div className="space-y-4 mt-4 mb-4 min-h-[200px] max-h-[600px] overflow-y-auto">
           {messages.map((message, index) => (
             <div
               key={index}
