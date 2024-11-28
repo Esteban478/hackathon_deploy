@@ -4,9 +4,15 @@ import { IUser, ILocation } from '@/types';
 import Ride from '@/models/ride';
 import { ObjectId } from 'mongodb';
 
+interface RouteContext {
+  params: {
+    rideId: string;
+  }
+}
+
 async function handlePassengerUpdate(
   request: Request,
-  { params }: { params: { rideId: string } },
+  context: RouteContext,
   isAdding: boolean
 ) {
   try {
@@ -85,14 +91,14 @@ async function handlePassengerUpdate(
 
 export async function POST(
   request: Request,
-  context: { params: { rideId: string } }
+  { params }: RouteContext
 ) {
-  return handlePassengerUpdate(request, context, true);
+  return handlePassengerUpdate(request, { params }, true);
 }
 
 export async function DELETE(
   request: Request,
-  context: { params: { rideId: string } }
+  { params }: RouteContext  // Changed from context: { params: { rideId: string } }
 ) {
-  return handlePassengerUpdate(request, context, false);
+  return handlePassengerUpdate(request, { params }, false);
 }
