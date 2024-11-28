@@ -8,6 +8,7 @@ import { Check } from "lucide-react";
 import { formatDateString } from '@/lib/utils';
 import { RideWithLocations } from "@/types";
 import { cn } from "@/lib/utils";
+import PickupStations from '@/components/stationsMap/PickupStations';
 
 export default function Rides() {
   const [rides, setRides] = useState<RideWithLocations[]>([]);
@@ -124,9 +125,9 @@ const getButtonState = (ride: RideWithLocations) => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Available Rides</h1>
-
+    <div className="container mx-auto px-4 py-4">
+      <PickupStations width="50%" height="300px"/>
+      <h1 className="text-4xl font-bold mt-8 mb-4">Available Rides</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {rides.map((ride) => {
           const buttonState = getButtonState(ride);
@@ -192,7 +193,7 @@ const getButtonState = (ride: RideWithLocations) => {
                   </Button>
                 </div>
               </CardContent>
-            </Card>
+              </Card>
           );
         })}
       </div>

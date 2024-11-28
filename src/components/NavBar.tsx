@@ -30,7 +30,7 @@ export default async function Navbar() {
               Analytics
             </Link>
             <Link href="/chat" className="hover:text-blue-600">
-            Chat
+              Chat
             </Link>
           </div>
         </div>

@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       messages: [
         { 
           role: "system", 
-          content: "You are a helpful assistant." 
+          content: "You are a sustainability expert helping us with making the office greener. Answer short and concise with actionable advice. Always give the top 3 fitting advices when there are multiple options." 
         },
         ...messages
       ],
