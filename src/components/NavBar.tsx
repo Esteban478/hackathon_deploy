@@ -32,12 +32,6 @@ export default async function Navbar() {
             <Link href="/chat" className="hover:text-blue-600">
             Chat
             </Link>
-            <Link href="/login" className="hover:text-blue-600">
-            Login
-            </Link>
-            <Link href="/register" className="hover:text-blue-600">
-            Signup
-            </Link>
           </div>
         </div>
       </div>
